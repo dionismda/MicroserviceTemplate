@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Futura Sistemas",
+  "classifications": ["Custom Templates"],
+  "identity": "FuturaMicroservice",
+  "name": "Futura Microservice",
+  "shortName": "futura-microservice",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "symbols": {
+    "ProjectName": {
+      "type": "parameter",
+      "dataType": "string",
+      "replaces": "PROJECT_NAME",
+      "fileRename": "PROJECT_NAME",
+      "isRequired": false,
+	  "defaultValue": "",
+    },
+	"ProjectNameLower": {
+		"type": "generated",
+		"generator": "casing",
+		"parameters": {
+			"source": "ProjectName",
+			"toLower": true
+		},
+		"replaces": "PROJECT_NAME_LOWER"
+	},
+  },
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "exclude": [
+            "README.md",
+            ".git/**",
+            ".vs/**"
+          ]
+        }
+      ],
+      "rename": {"__README.md":"README.md"}
+    }
+  ]
+}
